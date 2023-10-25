@@ -10,7 +10,7 @@ export { PageShell }
 
 PageShell.propTypes = {
   pageContext: PropTypes.any,
-  children: childrenPropType
+  children: childrenPropType,
 }
 function PageShell({ pageContext, children }) {
   return (
@@ -25,6 +25,9 @@ function PageShell({ pageContext, children }) {
             <Link className="navitem" href="/about">
               About
             </Link>
+            <Link className="navitem" href="/login">
+              Login
+            </Link>
           </Sidebar>
           <Content>{children}</Content>
         </Layout>
@@ -34,7 +37,7 @@ function PageShell({ pageContext, children }) {
 }
 
 Layout.propTypes = {
-  children: childrenPropType
+  children: childrenPropType,
 }
 function Layout({ children }) {
   return (
@@ -42,7 +45,7 @@ function Layout({ children }) {
       style={{
         display: 'flex',
         maxWidth: 900,
-        margin: 'auto'
+        margin: 'auto',
       }}
     >
       {children}
@@ -51,7 +54,7 @@ function Layout({ children }) {
 }
 
 Sidebar.propTypes = {
-  children: childrenPropType
+  children: childrenPropType,
 }
 function Sidebar({ children }) {
   return (
@@ -62,7 +65,7 @@ function Sidebar({ children }) {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        lineHeight: '1.8em'
+        lineHeight: '1.8em',
       }}
     >
       {children}
@@ -71,7 +74,7 @@ function Sidebar({ children }) {
 }
 
 Content.propTypes = {
-  children: childrenPropType
+  children: childrenPropType,
 }
 function Content({ children }) {
   return (
@@ -80,7 +83,7 @@ function Content({ children }) {
         padding: 20,
         paddingBottom: 50,
         borderLeft: '2px solid #eee',
-        minHeight: '100vh'
+        minHeight: '100vh',
       }}
     >
       {children}
@@ -93,7 +96,7 @@ function Logo() {
     <div
       style={{
         marginTop: 20,
-        marginBottom: 10
+        marginBottom: 10,
       }}
     >
       <a href="/">
