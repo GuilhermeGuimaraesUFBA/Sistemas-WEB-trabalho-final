@@ -1,7 +1,7 @@
 import './register.css'
-import logoImg from '../../renderer/logo.svg'
 import { Link } from '../../renderer/Link'
 import { FiArrowLeft } from 'react-icons/fi'
+import { Logo } from '../../components/Logo'
 
 export { Page }
 
@@ -10,7 +10,7 @@ function Page() {
     <div className="register-container">
       <div className="content">
         <section>
-          <img src={logoImg} alt="Be The Hero" />
+          <Logo />
           <h1>Cadastro</h1>
           <p>
             Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem

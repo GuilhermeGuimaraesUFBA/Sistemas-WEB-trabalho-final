@@ -1,7 +1,7 @@
 import './profile.css'
-import logoImg from '../../renderer/logo.svg'
-import { Link } from '../../renderer/Link'
 import { FiPower, FiTrash2 } from 'react-icons/fi'
+import { Logo } from '../../components/Logo'
+import { Link } from '../../components/Link'
 
 export { Page }
 
@@ -18,12 +18,14 @@ function Page() {
   return (
     <div className="profile-container">
       <header>
-        <img src={logoImg} alt="Be The Hero" />
+        <Logo />
         <span>Bem vinda, Aubrigo Aunimais</span>
 
-        <Link className="button" href="/incident">
-          Cadastrar novo caso
-        </Link>
+        <Link
+          className="button"
+          href="/incident"
+          description="Cadastrar novo caso"
+        />
         <button>
           <FiPower size={18} color="#e02041" />
         </button>

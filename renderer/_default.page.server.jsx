@@ -5,7 +5,7 @@ export const passToClient = ['pageProps', 'urlPathname']
 import ReactDOMServer from 'react-dom/server'
 import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vike/server'
-import logoUrl from './logo.svg'
+import logoUrl from './logo.png'
 
 async function render(pageContext) {
   const { Page, pageProps } = pageContext

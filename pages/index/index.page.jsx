@@ -1,8 +1,8 @@
 import './login.css'
 import heroesImg from '../../renderer/heroes.png'
-import logoImg from '../../renderer/logo.svg'
-import { Link } from '../../renderer/Link'
 import { FiLogIn } from 'react-icons/fi'
+import { Link } from '../../components/Link'
+import { Logo } from '../../components/Logo'
 
 export { Page }
 
@@ -10,24 +10,24 @@ function Page() {
   return (
     <div className="logon-container">
       <section className="form">
-        <img src={logoImg} alt="Be The Hero" />
+        <Logo />
 
         <form>
-          <h1>Faça seu logon</h1>
+          <h1>Faça seu login</h1>
 
           <input
-            placeholder="Seu ID"
+            placeholder="E-mail"
             value=""
             // onChange={e => setId(e.target.value)}
           />
           <button className="button" type="submit">
             Entrar
           </button>
-
-          <Link href="/register" className="back-link">
-            <FiLogIn size={16} color="#E02041" />
-            Não tenho um cadastro
-          </Link>
+          <Link
+            icon={<FiLogIn size={16} color="#0C356A" />}
+            description="Não tenho um cadastro"
+            href="/register"
+          />
         </form>
       </section>
       <img src={heroesImg} alt="Heroes" />
