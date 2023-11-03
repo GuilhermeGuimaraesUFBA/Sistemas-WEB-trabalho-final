@@ -24,6 +24,7 @@ function Page() {
             Entrar
           </button>
           <Link
+            className="back-link"
             icon={<FiLogIn size={16} color="#0C356A" />}
             description="Não tenho um cadastro"
             href="/register"
