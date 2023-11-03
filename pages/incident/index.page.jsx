@@ -42,7 +42,7 @@ function Page() {
             id=""
           />
           <input
-            placeholder="Valor em reais"
+            placeholder="Localização"
             //   value={value}
             //   onChange={e => setValue(e.target.value)}
           />
