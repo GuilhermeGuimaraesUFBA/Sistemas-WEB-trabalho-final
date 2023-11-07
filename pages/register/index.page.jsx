@@ -1,5 +1,5 @@
 import './register.css'
-import { Link } from '../../renderer/Link'
+import { Link } from '../../components/Link'
 import { FiArrowLeft } from 'react-icons/fi'
 import { Logo } from '../../components/Logo'
 
