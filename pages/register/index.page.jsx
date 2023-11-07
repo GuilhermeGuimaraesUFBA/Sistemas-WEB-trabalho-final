@@ -61,6 +61,12 @@ function Page() {
           <button type="submit" className="button">
             Cadastrar
           </button>
+          
+          <Link
+          className="button"
+          href="/"
+          description="Voltar"
+        />
         </form>
       </div>
     </div>
