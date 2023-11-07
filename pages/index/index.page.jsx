@@ -15,9 +15,9 @@ function Page() {
         <form>
           <h1>Faça seu login</h1>
 
-          <input
+          <input type='email'
             placeholder="E-mail"
-            value=""
+            // value=""
             // onChange={e => setId(e.target.value)}
           />
           <button className="button" type="submit">
