@@ -16,10 +16,12 @@ function Page() {
             Faça seu cadastro, entre na plataforma e ajude pessoas a encontrarem
             os casos da sua ONG.
           </p>
-          <Link href="/" className="back-link">
-            <FiArrowLeft size={16} color="#E02041" />
-            Já tenho um cadastro
-          </Link>
+          <Link
+            icon={<FiArrowLeft size={16} color="#0C356A" />}
+            href="/"
+            className="back-link"
+            description="Voltar para home"
+          />
         </section>
 
         <form>
@@ -61,12 +63,6 @@ function Page() {
           <button type="submit" className="button">
             Cadastrar
           </button>
-          
-          <Link
-          className="button"
-          href="/"
-          description="Voltar"
-        />
         </form>
       </div>
     </div>
