@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './PageShell.css'
 import { PageContextProvider } from './usePageContext'
 import { childrenPropType } from './PropTypeValues'
+import { UserContextProvider } from './useUserContext'
 
 export { PageShell }
 
@@ -13,9 +14,11 @@ PageShell.propTypes = {
 function PageShell({ pageContext, children }) {
   return (
     <React.StrictMode>
-      <PageContextProvider pageContext={pageContext}>
-        {children}
-      </PageContextProvider>
+      <UserContextProvider>
+        <PageContextProvider pageContext={pageContext}>
+          {children}
+        </PageContextProvider>
+      </UserContextProvider>
     </React.StrictMode>
   )
 }

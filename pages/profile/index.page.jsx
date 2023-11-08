@@ -1,25 +1,22 @@
 import './profile.css'
-import { FiPower, FiTrash2 } from 'react-icons/fi'
+import { FiMapPin, FiPhone, FiPower, FiTrash2 } from 'react-icons/fi'
 import { Logo } from '../../components/Logo'
 import { Link } from '../../components/Link'
+import { incidents } from './incidents'
 
 export { Page }
 
 function Page() {
-  const incidents = [
-    {
-      id: 1,
-      title: 'Filhotinhos encontrados',
-      description: 'Alguns filhotinhos foram encontrados na estrada.',
-      value: 30,
-    },
-  ]
+  let user
+  if (typeof window !== 'undefined') {
+    user = localStorage.getItem('user')
+  }
 
   return (
     <div className="profile-container">
       <header>
         <Logo />
-        <span>Bem vinda, Aubrigo Aunimais</span>
+        <span>{user ? `Bem vinda, ${user}` : `Boas vindas!`}</span>
 
         <Link
           className="button"
@@ -37,15 +34,21 @@ function Page() {
             <strong>CASO:</strong>
             <p>{incident.title}</p>
 
+            <div className="image-container">
+              <img src={incident.image} />
+            </div>
+
             <strong>DESCRIÇÃO:</strong>
             <p>{incident.description}</p>
 
-            <strong>VALOR:</strong>
+            <strong>LOCALIZAÇÃO:</strong>
             <p>
-              {Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL',
-              }).format(incident.value)}
+              <FiMapPin /> {incident.location}
+            </p>
+
+            <strong>CONTATO:</strong>
+            <p>
+              <FiPhone /> {incident.contato}
             </p>
 
             <button>
