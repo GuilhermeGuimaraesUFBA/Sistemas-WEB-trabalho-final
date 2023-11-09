@@ -1,50 +1,68 @@
-import { useHistory } from 'react-router-dom';
-import './login.css'
-import heroesImg from '../../renderer/heroes.png'
-import { FiLogIn } from 'react-icons/fi'
-import { Link } from '../../components/Link'
+import './profile.css'
+import { FiMapPin, FiPhone, FiPower, FiTrash2 } from 'react-icons/fi'
 import { Logo } from '../../components/Logo'
-import { users } from './usuarios'
+import { Link } from '../../components/Link'
+import { incidents } from './incidents'
 
 export { Page }
 
 function Page() {
-   const onClickEntrar = (event) => {
-     event.preventDefault()
-     const [user] = users.filter(
-       (item) => item.email === event.target.email.value
-     )
-     console.log(user)
-
-     localStorage.setItem('user', user.name)
-
-     setTimeout(10)
-
-     window.location.href = 'profile'
+  let user
+  if (typeof window !== 'undefined') {
+    user = localStorage.getItem('user')
   }
 
   return (
-    <div className="logon-container">
-      <section className="form">
+    <div className="profile-container">
+      <header>
         <Logo />
+        <span>{user ? `Bem vinda, ${user}` : `Boas vindas!`}</span>
 
-        <form onSubmit={onClickEntrar}>
-          <h1>Faça seu login</h1>
+        {user && (
+          <>
+            <Link
+              className="button"
+              href="/incident"
+              description="Cadastrar novo caso"
+            />
+            <button>
+              <FiPower size={18} color="#e02041" />
+            </button>
+          </>
+        )}
+      </header>
+      <h1>Casos cadastrados</h1>
+      <ul>
+        {incidents.map((incident) => (
+          <li key={incident.id}>
+            <strong>CASO:</strong>
+            <p>{incident.title}</p>
 
-          <input type="email" placeholder="E-mail" name="email" />
-          <button className="button" type="submit" >
-            Entrar
-          </button>
+            <div className="image-container">
+              <img src={incident.image} />
+            </div>
 
-          <Link
-            className="back-link"
-            icon={<FiLogIn size={16} color="#0C356A" />}
-            description="Não tenho um cadastro"
-            href="/register"
-          />
-        </form>
-      </section>
-      <img src={heroesImg} alt="Heroes" />
+            <strong>DESCRIÇÃO:</strong>
+            <p>{incident.description}</p>
+
+            <strong>LOCALIZAÇÃO:</strong>
+            <p>
+              <FiMapPin /> {incident.location}
+            </p>
+
+            <strong>CONTATO:</strong>
+            <p>
+              <FiPhone /> {incident.contato}
+            </p>
+
+            {user && (
+              <button>
+                <FiTrash2 size={20} color="#a8a8b3" />
+              </button>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
