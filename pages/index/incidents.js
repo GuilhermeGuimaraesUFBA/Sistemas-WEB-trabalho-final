@@ -6,7 +6,7 @@ export const incidents = [
     description: 'Alguns filhotinhos foram encontrados na estrada.',
     image: imgUrl,
     location: 'Rua das Araras - Imbuí',
-    contato: '(71) 99999-9999',
+    status: 'Disponível',
   },
   {
     id: 1,
@@ -14,7 +14,7 @@ export const incidents = [
     description: 'Alguns filhotinhos foram encontrados na estrada.',
     image: imgUrl,
     location: 'Rua das Araras - Imbuí',
-    contato: '(71) 99999-9999',
+    status: 'Em entrevistas',
   },
   {
     id: 1,
@@ -22,7 +22,7 @@ export const incidents = [
     description: 'Alguns filhotinhos foram encontrados na estrada.',
     image: imgUrl,
     location: 'Rua das Araras - Imbuí',
-    contato: '(71) 99999-9999',
+    status: 'Processando saída',
   },
   {
     id: 1,
@@ -30,7 +30,7 @@ export const incidents = [
     description: 'Alguns filhotinhos foram encontrados na estrada.',
     image: imgUrl,
     location: 'Rua das Araras - Imbuí',
-    contato: '(71) 99999-9999',
+    status: 'Disponível',
   },
   {
     id: 1,
@@ -38,7 +38,7 @@ export const incidents = [
     description: 'Alguns filhotinhos foram encontrados na estrada.',
     image: imgUrl,
     location: 'Rua das Araras - Imbuí',
-    contato: '(71) 99999-9999',
+    status: 'Disponível',
   },
   {
     id: 1,
@@ -46,7 +46,7 @@ export const incidents = [
     description: 'Alguns filhotinhos foram encontrados na estrada.',
     image: imgUrl,
     location: 'Rua das Araras - Imbuí',
-    contato: '(71) 99999-9999',
+    status: 'Disponível',
   },
   {
     id: 1,
@@ -54,7 +54,7 @@ export const incidents = [
     description: 'Alguns filhotinhos foram encontrados na estrada.',
     image: imgUrl,
     location: 'Rua das Araras - Imbuí',
-    contato: '(71) 99999-9999',
+    status: 'Disponível',
   },
   {
     id: 1,
@@ -62,6 +62,6 @@ export const incidents = [
     description: 'Alguns filhotinhos foram encontrados na estrada.',
     image: imgUrl,
     location: 'Rua das Araras - Imbuí',
-    contato: '(71) 99999-9999',
+    status: 'Disponível',
   },
 ]

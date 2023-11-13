@@ -1,8 +1,10 @@
 import './profile.css'
-import { FiMapPin, FiPhone, FiPower, FiTrash2 } from 'react-icons/fi'
+import { FiMapPin, FiPower, FiTrash2 } from 'react-icons/fi'
 import { Logo } from '../../components/Logo'
 import { Link } from '../../components/Link'
 import { incidents } from './incidents'
+import { Modal } from '../../components/Modal'
+import { useState } from 'react'
 
 export { Page }
 
@@ -12,6 +14,9 @@ function Page() {
     user = localStorage.getItem('user')
   }
 
+  const status_adocao = ['Disponível', 'Em entrevistas']
+
+  const [modalOpen, setModalOpen] = useState(false)
   return (
     <div className="profile-container">
       <header>
@@ -50,10 +55,17 @@ function Page() {
               <FiMapPin /> {incident.location}
             </p>
 
-            <strong>CONTATO:</strong>
-            <p>
-              <FiPhone /> {incident.contato}
-            </p>
+            <strong>STATUS:</strong>
+            <p>{incident.status}</p>
+
+            {status_adocao.includes(incident.status) && (
+              <button
+                className="button-adotar"
+                onClick={() => setModalOpen(true)}
+              >
+                Adotar
+              </button>
+            )}
 
             {user && (
               <button>
@@ -63,6 +75,7 @@ function Page() {
           </li>
         ))}
       </ul>
+      <Modal isOpen={modalOpen} setOpen={setModalOpen} />
     </div>
   )
 }

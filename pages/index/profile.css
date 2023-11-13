@@ -90,3 +90,9 @@
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.button-adotar {
+  background-color: #0174be !important;
+  color: white !important;
+  font-size: 12px;
+}
