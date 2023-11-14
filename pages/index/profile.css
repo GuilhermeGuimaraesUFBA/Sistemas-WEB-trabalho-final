@@ -94,5 +94,12 @@
 .button-adotar {
   background-color: #0174be !important;
   color: white !important;
-  font-size: 12px;
+  font-size: 15px;
+  margin-top: 470px;
+  width: 100px;
+  height: 40px;
+}
+
+.editbutton{
+  margin-right: 30px;
 }

@@ -18,7 +18,7 @@ function Page() {
           </p>
           <Link
             icon={<FiArrowLeft size={16} color="#0C356A" />}
-            href="/profile"
+            href="/"
             className="back-link"
             description="Voltar para home"
           />

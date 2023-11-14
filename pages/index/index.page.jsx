@@ -1,5 +1,6 @@
 import './profile.css'
-import { FiMapPin, FiPower, FiTrash2 } from 'react-icons/fi'
+import { FiMapPin, FiPower, FiTrash2, FiEdit2,
+  FiEdit3,  FiEdit } from 'react-icons/fi'
 import { Logo } from '../../components/Logo'
 import { Link } from '../../components/Link'
 import { incidents } from './incidents'
@@ -66,11 +67,15 @@ function Page() {
                 Adotar
               </button>
             )}
+            <button className='editbutton'>
+                <FiEdit size={20} color="#a8a8b3" />
+            </button>
 
             {user && (
               <button>
                 <FiTrash2 size={20} color="#a8a8b3" />
               </button>
+              
             )}
           </li>
         ))}
