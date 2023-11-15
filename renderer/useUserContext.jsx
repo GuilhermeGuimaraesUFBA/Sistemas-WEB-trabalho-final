@@ -25,5 +25,7 @@ function UserContextProvider({ children }) {
 
 function useUserContext() {
   const userContext = useContext(Context)
+
+  console.log('user context', userContext)
   return userContext
 }

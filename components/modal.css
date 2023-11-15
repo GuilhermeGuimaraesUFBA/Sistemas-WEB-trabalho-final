@@ -78,3 +78,10 @@ button:hover {
   align-items: center;
   gap: 10px;
 }
+
+.confirmacao-container {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: flex-end;
+}

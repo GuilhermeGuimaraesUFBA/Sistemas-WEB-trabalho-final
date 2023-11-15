@@ -4,10 +4,13 @@ import { FiLogIn } from 'react-icons/fi'
 import { Link } from '../../components/Link'
 import { Logo } from '../../components/Logo'
 import { users } from './usuarios'
+import { useUserContext } from '../../renderer/useUserContext'
 
 export { Page }
 
 function Page() {
+  const userContext = useUserContext()
+  console.log('usercontext', userContext)
   const onClickEntrar = (event) => {
     event.preventDefault()
     const [user] = users.filter(
@@ -19,7 +22,9 @@ function Page() {
 
     setTimeout(10)
 
-    window.location.href = 'profile'
+    userContext.setUser(user)
+
+    window.location.href = '/'
   }
 
   return (

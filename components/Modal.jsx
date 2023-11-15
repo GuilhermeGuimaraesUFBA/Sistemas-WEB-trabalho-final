@@ -1,6 +1,7 @@
 import propTypes from 'prop-types'
 import './modal.css'
 import { useState } from 'react'
+import { ModalConfirmacao } from './ModalConfirmacao'
 
 export { Modal }
 
@@ -11,8 +12,19 @@ Modal.propTypes = {
 
 function Modal({ isOpen, setOpen }) {
   const [contato, setContato] = useState('')
+  const [modalConfirmacao, setModalConfirmacao] = useState(false)
 
-  if (!isOpen) return null
+  if (!isOpen) {
+    if (modalConfirmacao) {
+      return (
+        <ModalConfirmacao
+          isOpen={modalConfirmacao}
+          setOpen={setModalConfirmacao}
+        />
+      )
+    }
+    return null
+  }
 
   const formataContato = (input) => {
     const numeros = input.target.value.replace(/\D/g, '')
@@ -24,39 +36,44 @@ function Modal({ isOpen, setOpen }) {
   }
 
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <div>
-          <h2>Preencha seus dados</h2>
-        </div>
-        <div>
-          <form action="">
-            <input type="text" placeholder="Nome" />
-            <input
-              type="text"
-              placeholder="Contato"
-              // value={contato}
-              // onChange={(e) => formataContato(e)}
-            />
-            <div className="buttons">
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="button-salvar"
-              >
-                Salvar
-              </button>
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="button-sair"
-              >
-                Sair
-              </button>
-            </div>
-          </form>
+    <>
+      <div className="modal">
+        <div className="modal-content">
+          <div>
+            <h2>Preencha seus dados</h2>
+          </div>
+          <div>
+            <form action="">
+              <input type="text" placeholder="Nome" />
+              <input
+                type="text"
+                placeholder="Contato"
+                // value={contato}
+                // onChange={(e) => formataContato(e)}
+              />
+              <div className="buttons">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false)
+                    setModalConfirmacao(true)
+                  }}
+                  className="button-salvar"
+                >
+                  Salvar
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  className="button-sair"
+                >
+                  Sair
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

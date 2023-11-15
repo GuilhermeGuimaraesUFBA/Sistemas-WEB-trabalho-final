@@ -1,6 +1,5 @@
 import './profile.css'
-import { FiMapPin, FiPower, FiTrash2, FiEdit2,
-  FiEdit3,  FiEdit } from 'react-icons/fi'
+import { FiMapPin, FiPower, FiTrash2, FiEdit } from 'react-icons/fi'
 import { Logo } from '../../components/Logo'
 import { Link } from '../../components/Link'
 import { incidents } from './incidents'
@@ -18,6 +17,7 @@ function Page() {
   const status_adocao = ['Disponível', 'Em entrevistas']
 
   const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <div className="profile-container">
       <header>
@@ -67,15 +67,22 @@ function Page() {
                 Adotar
               </button>
             )}
-            <button className='editbutton'>
+            {user && (
+              <button
+                className="editbutton"
+                onClick={() => {
+                  localStorage.setItem('edit', JSON.stringify(incident))
+                  window.location.href = '/incident'
+                }}
+              >
                 <FiEdit size={20} color="#a8a8b3" />
-            </button>
+              </button>
+            )}
 
             {user && (
               <button>
                 <FiTrash2 size={20} color="#a8a8b3" />
               </button>
-              
             )}
           </li>
         ))}

@@ -1,9 +1,9 @@
-import imgUrl from '../../img/filhotes1.jpeg'
 export const incidents = [
   {
     id: 1,
     title: 'Filhotinhos abandonados pelo dono',
-    description: 'Alguns filhotinhos foram encontrados na rua, dentro de uma caixa de papelão. 4 filhotes.',
+    description:
+      'Alguns filhotinhos foram encontrados na rua, dentro de uma caixa de papelão. 4 filhotes.',
     image: '../../img/filhotes1.jpeg',
     location: 'Rua das Araras - Imbuí',
     status: 'Disponível',
@@ -43,7 +43,8 @@ export const incidents = [
   {
     id: 6,
     title: 'Thomas está para adoção',
-    description: 'Filhotinho foi encontrado debaixo de telhas em uma casa abandonada na Federação.',
+    description:
+      'Filhotinho foi encontrado debaixo de telhas em uma casa abandonada na Federação.',
     image: '../../img/filhotes6.jpg',
     location: 'Rua Jardim Federação - Federação',
     status: 'Em entrevistas',
@@ -51,7 +52,8 @@ export const incidents = [
   {
     id: 7,
     title: 'Gatinho para adoção',
-    description: 'Joaquim foi abandonado perto da praia da barra por seu dono. JÁ VACINADO .',
+    description:
+      'Joaquim foi abandonado perto da praia da barra por seu dono. JÁ VACINADO .',
     image: '../../img/filhotes7.jpg',
     location: 'Rua César Zama - Barra',
     status: 'Disponível',
