@@ -46,6 +46,13 @@ function Page() {
             //   value={value}
             //   onChange={e => setValue(e.target.value)}
           />
+          <h3 className='imagenstext'>Adicione a(s) imagem(s) do caso</h3>
+          <input
+            placeholder=""
+            //   value={value}
+            //   onChange={e => setValue(e.target.value)}
+            type="file"
+          />
 
           <button type="submit" className="button">
             Cadastrar
