@@ -18,9 +18,9 @@ function Page() {
           </p>
           <Link
             icon={<FiArrowLeft size={16} color="#0C356A" />}
-            href="/"
+            href="/login"
             className="back-link"
-            description="Voltar para home"
+            description="Fazer Login"
           />
         </section>
 
@@ -60,9 +60,11 @@ function Page() {
             />
           </div>
 
-          <button type="submit" className="button">
-            Cadastrar
-          </button>
+          <Link
+              className="button"
+              href="/login"
+              description="Cadastrar"
+            />
         </form>
       </div>
     </div>

@@ -15,10 +15,10 @@ function ModalConfirmacao({ isOpen, setOpen }) {
     <div className="modal">
       <div className="modal-content">
         <div>
-          <h2>Obrigado pelo interesse</h2>
+          <h2 className='h2confirmação'>Obrigado pelo interesse!</h2>
         </div>
         <div className="confirmacao-container">
-          <h3>Entraremos em contato com você através do número cadastrado.</h3>
+          <p>Entraremos em contato com você através do número cadastrado.</p>
           <button className="button-salvar" onClick={() => setOpen(false)}>
             Ok
           </button>

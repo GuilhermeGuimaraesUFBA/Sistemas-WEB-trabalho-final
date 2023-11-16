@@ -60,7 +60,7 @@ export const incidents = [
   },
   {
     id: 8,
-    title: '4 irmão para adoção',
+    title: '4 irmãos para adoção',
     description: 'Esses 4 estão no aguardo de uma familia para chamar de sua!.',
     image: '../../img/filhotes8.jpg',
     location: 'Rua Parari - Brotas',

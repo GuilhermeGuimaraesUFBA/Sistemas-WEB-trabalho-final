@@ -21,9 +21,18 @@ function Page() {
   return (
     <div className="profile-container">
       <header>
+        
         <Logo />
         <span>{user ? `Bem vinda, ${user}` : `Boas vindas!`}</span>
 
+        {!user && (
+          <Link
+            className="button"
+            href="/login"
+            description="Fazer Login"
+          />
+        )}
+        
         {user && (
           <>
             <Link
@@ -37,6 +46,7 @@ function Page() {
           </>
         )}
       </header>
+        
       <h1>Casos cadastrados</h1>
       <ul>
         {incidents.map((incident) => (
