@@ -2,7 +2,7 @@ import './profile.css'
 import { FiMapPin, FiPower, FiTrash2, FiEdit } from 'react-icons/fi'
 import { Logo } from '../../components/Logo'
 import { Link } from '../../components/Link'
-import { incidents } from './incidents'
+import { incidentsData } from './incidents'
 import { Modal } from '../../components/Modal'
 import { useState } from 'react'
 
@@ -10,6 +10,7 @@ export { Page }
 
 function Page() {
   let user
+  const [incidents, setIncidents] = useState(incidentsData)
   if (typeof window !== 'undefined') {
     user = localStorage.getItem('user')
   }
@@ -18,35 +19,41 @@ function Page() {
 
   const [modalOpen, setModalOpen] = useState(false)
 
+  const removeItem = (id) => {
+    const newIncidents = incidents.filter((item) => item.id !== id)
+    setIncidents(newIncidents)
+  }
+
   return (
     <div className="profile-container">
       <header>
-        
         <Logo />
         <span>{user ? `Bem vinda, ${user}` : `Boas vindas!`}</span>
 
         {!user && (
-          <Link
-            className="button"
-            href="/login"
-            description="Fazer Login"
-          />
+          <Link className="button" href="/login" description="Fazer Login" />
         )}
-        
+
         {user && (
           <>
             <Link
               className="button"
               href="/incident"
               description="Cadastrar novo caso"
+              onClick={() => localStorage.removeItem('edit')}
             />
-            <button>
+            <button
+              onClick={() => {
+                localStorage.clear()
+                window.location.href = '/login'
+              }}
+            >
               <FiPower size={18} color="#e02041" />
             </button>
           </>
         )}
       </header>
-        
+
       <h1>Casos cadastrados</h1>
       <ul>
         {incidents.map((incident) => (
@@ -90,7 +97,7 @@ function Page() {
             )}
 
             {user && (
-              <button>
+              <button onClick={() => removeItem(incident.id)}>
                 <FiTrash2 size={20} color="#a8a8b3" />
               </button>
             )}

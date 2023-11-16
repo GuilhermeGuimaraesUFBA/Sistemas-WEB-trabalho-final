@@ -11,7 +11,7 @@ Link.propTypes = {
 
 function Link(props) {
   return (
-    <a href={props.href} className={props.className}>
+    <a href={props.href} className={props.className} {...props}>
       {props.icon} {props.description}
     </a>
   )

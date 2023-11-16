@@ -48,8 +48,8 @@ function Modal({ isOpen, setOpen }) {
               <input
                 type="text"
                 placeholder="Contato"
-                // value={contato}
-                // onChange={(e) => formataContato(e)}
+                value={contato}
+                onChange={(e) => formataContato(e)}
               />
               <div className="buttons">
                 <button

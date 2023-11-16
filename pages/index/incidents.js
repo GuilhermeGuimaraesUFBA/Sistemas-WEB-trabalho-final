@@ -1,4 +1,4 @@
-export const incidents = [
+export const incidentsData = [
   {
     id: 1,
     title: 'Filhotinhos abandonados pelo dono',

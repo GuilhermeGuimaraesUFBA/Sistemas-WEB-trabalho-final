@@ -11,6 +11,24 @@ function Page() {
     caso = JSON.parse(localStorage.getItem('edit'))
   }
 
+  const submitIncident = (e) => {
+    e.preventDefault()
+    const incidentObject = {
+      title: e.target.title.value,
+      description: e.target.description.value,
+      location: e.target.location.value,
+      image: e.target.image.value,
+    }
+
+    if (caso?.id) {
+      localStorage.setItem('editedItem', JSON.stringify(incidentObject))
+    } else {
+      localStorage.setItem('addedItem', JSON.stringify(incidentObject))
+    }
+
+    window.location.href = '/'
+  }
+
   console.log(caso)
 
   return (
@@ -35,38 +53,31 @@ function Page() {
           />
         </section>
 
-        <form>
+        <form onSubmit={submitIncident}>
           <input
             placeholder="Título do caso"
             value={caso?.title}
-            //   onChange={e => setTitle(e.target.value)}
             type="text"
-            name=""
+            name="title"
             id=""
           />
           <textarea
             placeholder="Descrição"
             value={caso?.description}
-            //   onChange={e => setDescription(e.target.value)}
             type="email"
-            name=""
+            name="description"
             id=""
           />
           <input
             placeholder="Localização"
             value={caso?.location}
-            //   onChange={e => setValue(e.target.value)}
+            name="location"
           />
           <h3 className="imagenstext">Adicione a(s) imagem(s) do caso</h3>
           {caso?.id && <img src={caso?.image} />}
-          <input
-            placeholder=""
-            // value={caso.image}
-            //   onChange={e => setValue(e.target.value)}
-            type="file"
-          />
+          <input placeholder="" name="image" type="file" />
 
-          <button type="submit" className="button">
+          <button className="button" type="submit">
             {caso?.id ? 'Editar' : 'Cadastrar'}
           </button>
         </form>
