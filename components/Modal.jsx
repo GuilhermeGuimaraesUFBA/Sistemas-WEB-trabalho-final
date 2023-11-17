@@ -48,9 +48,11 @@ function Modal({ isOpen, setOpen }) {
               <input
                 type="text"
                 placeholder="Contato"
-                value={contato}
-                onChange={(e) => formataContato(e)}
+                // value={contato}
+                // onChange={(e) => formataContato(e)}
               />
+              <input type="text" placeholder="Cidade" />
+              <input type="text" placeholder="Estado" />
               <div className="buttons">
                 <button
                   type="button"

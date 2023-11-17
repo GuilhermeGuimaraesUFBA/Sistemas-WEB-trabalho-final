@@ -6,6 +6,7 @@ import { Logo } from '../../components/Logo'
 import { users } from './usuarios'
 import { useUserContext } from '../../renderer/useUserContext'
 
+
 export { Page }
 
 function Page() {
@@ -45,6 +46,12 @@ function Page() {
             icon={<FiLogIn size={16} color="#0C356A" />}
             description="Não tenho um cadastro"
             href="/register"
+          />
+          <Link
+            className="back-link"
+            icon={<FiLogIn size={16} color="#0C356A" />}
+            description="Não sou uma ONG"
+            href="/"
           />
         </form>
       </section>
