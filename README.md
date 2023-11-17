@@ -1,6 +1,6 @@
  # Adote um amigo
   ### Este projeto foi desenvolvido para a matéria MATC82 (Sistemas Web):
-  O objetivo do projeto é por em prática o assunto apredido no semestre, como HTML, CSS e JavaScript
+  O objetivo do projeto é por em prática o assunto aprendido no semestre, como HTML, CSS e JavaScript
   
 ## 📝 Sumário
 - [1. Equipe](#equipe)
