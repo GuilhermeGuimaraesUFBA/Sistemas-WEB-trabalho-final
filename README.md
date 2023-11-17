@@ -70,5 +70,5 @@
 
 
 ### Pré-requisitos
-Instale a versão 16.20.1 do `node`.   
+Instale a versão mais atualizada do `node`.   
 Instale o pacote npm escrevendo `npm install` no seu terminal
